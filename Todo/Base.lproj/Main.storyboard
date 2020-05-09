@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="669.56521739130437" y="26.90217391304348"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Controller-->
         <scene sceneID="fmH-hD-P9f">
             <objects>
-                <viewController id="giV-1p-4lS" sceneMemberID="viewController">
+                <viewController id="giV-1p-4lS" customClass="AddController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zFa-rk-Wu5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,11 +91,17 @@
                                 <rect key="frame" x="176" y="384" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="追加する"/>
+                                <connections>
+                                    <action selector="todoAddButton:" destination="giV-1p-4lS" eventType="touchUpInside" id="DYa-Ay-8xy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gt7-ar-AVm"/>
                     </view>
+                    <connections>
+                        <outlet property="todoTextField" destination="QYs-5B-gHB" id="mf3-ny-epr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEh-k9-2he" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
