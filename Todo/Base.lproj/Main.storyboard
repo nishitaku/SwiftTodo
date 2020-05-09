@@ -23,7 +23,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="メイン画面" id="BBL-T8-UDS">
-                                        <barButtonItem key="rightBarButtonItem" title="追加" style="done" id="fvr-6Z-Hhc"/>
+                                        <barButtonItem key="rightBarButtonItem" title="追加" style="done" id="fvr-6Z-Hhc">
+                                            <connections>
+                                                <segue destination="giV-1p-4lS" kind="show" id="0lv-FV-rCY"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -68,7 +72,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="追加画面" id="XMh-0C-LXb">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" style="done" id="yy6-1H-Ol5"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" style="done" id="yy6-1H-Ol5">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="PkM-gD-qTG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
