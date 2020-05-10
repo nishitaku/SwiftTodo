@@ -17,7 +17,7 @@ class AddController: UIViewController {
         // フィールドを空にする
         todoTextField.text = ""
         // 変数の中身をUDに追加
-        UserDefaults.standard.set(todoTextField, forKey: "todoList")
+        UserDefaults.standard.set(todoList, forKey: "todoList")
     }
     
     override func viewDidLoad() {

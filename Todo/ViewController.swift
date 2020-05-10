@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // UITableView、cellForRowAtの追加(表示するcellの中身を決める)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todoCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
+        let todoCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
         todoCell.textLabel!.text = todoList[indexPath.row]
         return todoCell
     }
