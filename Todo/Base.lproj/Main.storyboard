@@ -101,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="todoTextField" destination="QYs-5B-gHB" id="mf3-ny-epr"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMain" id="YuW-Rg-g5B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEh-k9-2he" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,4 +109,7 @@
             <point key="canvasLocation" x="1397.1014492753625" y="26.086956521739133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YuW-Rg-g5B"/>
+    </inferredMetricsTieBreakers>
 </document>

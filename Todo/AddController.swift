@@ -21,6 +21,8 @@ class AddController: UIViewController {
         UserDefaults.standard.set(todoList, forKey: "todoList")
         // フィールドを空にする
         todoTextField.text = ""
+        // メイン画面に遷移
+        self.performSegue(withIdentifier: "toMain", sender: self)
     }
     
     override func viewDidLoad() {
