@@ -10,16 +10,11 @@ import UIKit
 
 class AddController: UIViewController {
     
-    let defaults = UserDefaults.standard
-    
     @IBOutlet weak var todoTextField: UITextField!
     @IBAction func todoAddButton(_ sender: Any) {
         
-        var todoList: [String] = []
-        
-        if let unwrappedlist = defaults.stringArray(forKey: "todoList") {
-            todoList = unwrappedlist
-        }
+        let client = UserDefaultsClient()
+        var todoList: [String] = client.getUserDefaultTodoList()
         
         todoList.append(todoTextField.text!)
         // 変数の中身をUDに追加
@@ -34,7 +29,6 @@ class AddController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

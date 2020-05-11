@@ -25,13 +25,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return todoCell
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // 追加画面で入力した内容を取得する
-        if let unwrappedlist = defaults.stringArray(forKey: "todoList") {
-            todoList = unwrappedlist
-        }
+        let client = UserDefaultsClient()
+        todoList = client.getUserDefaultTodoList()
     }
 
 
