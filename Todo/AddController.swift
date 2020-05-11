@@ -8,16 +8,24 @@
 
 import UIKit
 
-var todoList = [String]()
-
 class AddController: UIViewController {
+    
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var todoTextField: UITextField!
     @IBAction func todoAddButton(_ sender: Any) {
+        
+        var todoList: [String] = []
+        
+        if let unwrappedlist = defaults.stringArray(forKey: "todoList") {
+            todoList = unwrappedlist
+        }
+        
         todoList.append(todoTextField.text!)
-        // フィールドを空にする
-        todoTextField.text = ""
         // 変数の中身をUDに追加
         UserDefaults.standard.set(todoList, forKey: "todoList")
+        // フィールドを空にする
+        todoTextField.text = ""
     }
     
     override func viewDidLoad() {

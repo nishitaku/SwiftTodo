@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private var todoList: [String] = []
+    let defaults = UserDefaults.standard
+    
     // UITableView、numberOfRowsInSectionの追加(表示するcellし数を決める)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoList.count
@@ -26,8 +29,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // 追加画面で入力した内容を取得する
-        if UserDefaults.standard.object(forKey: "todoList") != nil {
-            todoList = UserDefaults.standard.object(forKey: "todoList") as! [String]
+        if let unwrappedlist = defaults.stringArray(forKey: "todoList") {
+            todoList = unwrappedlist
         }
     }
 
