@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var table: UITableView!
     
     private var todoList: [String] = []
     let defaults = UserDefaults.standard
@@ -20,9 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // UITableView、cellForRowAtの追加(表示するcellの中身を決める)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todoCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-        todoCell.textLabel!.text = todoList[indexPath.row]
-        return todoCell
+        
+        let customCell = tableView.dequeueReusableCell(withIdentifier: "ReuseCell", for: indexPath) as! CustomTableViewCell
+        customCell.controlDisplay(indexPath: indexPath, label: todoList[indexPath.row])
+        return customCell
     }
     
     override func viewDidLoad() {
@@ -30,6 +32,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 追加画面で入力した内容を取得する
         let client = UserDefaultsClient()
         todoList = client.getUserDefaultTodoList()
+        
+        table.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "ReuseCell")
     }
 
 
