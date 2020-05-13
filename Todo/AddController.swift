@@ -12,6 +12,7 @@ class AddController: UIViewController {
     
     @IBOutlet weak var todoTextField: UITextField!
     @IBAction func todoAddButton(_ sender: Any) {
+        print("Add Button Clicked")
         
         let client = UserDefaultsClient()
         var todoList: [String] = client.getUserDefaultTodoList()
